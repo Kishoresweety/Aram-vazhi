@@ -59,15 +59,15 @@
           <form id="contact-form" class="form" method="POST" onsubmit="handleSubmit(event)">
             <div class="form-group">
               <label class="form-label">Name *</label>
-              <input class="form-input" type="text" placeholder="Your name" required>
+              <input class="form-input" type="text" name="name" placeholder="Your name" required>
             </div>
             <div class="form-group">
               <label class="form-label">Email *</label>
-              <input class="form-input" type="email" placeholder="you@email.com" required>
+              <input class="form-input" type="email" name="email" placeholder="you@email.com" required>
             </div>
             <div class="form-group">
               <label class="form-label">Message *</label>
-              <textarea class="form-textarea" placeholder="Your message..." required></textarea>
+              <textarea class="form-textarea" name="message" placeholder="Your message..." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="justify-content:center;font-size:15px;width:100%;">
               Send Message
