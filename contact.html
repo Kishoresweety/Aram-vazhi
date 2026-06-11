@@ -56,7 +56,7 @@
         <div>
           <h2 class="heading-sm text-navy" style="margin-bottom:8px;">Send a Message</h2>
           <p style="color:var(--gray-600);font-size:15px;margin-bottom:32px;line-height:1.65;">Our team will get back to you within 2–3 business days.</p>
-          <form id="contact-form">
+          <form id="contact-form" class="form" method="POST" onsubmit="handleSubmit(event)">
             <div class="form-group">
               <label class="form-label">Name *</label>
               <input class="form-input" type="text" placeholder="Your name" required>
@@ -126,6 +126,28 @@
   </div><div class="footer-bottom"><span class="footer-copy">&copy; <span id="yr"></span> Aram Vazhi. All rights reserved.</span><div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="code-of-ethics.html">Code of Ethics</a><a href="community-guidelines.html">Community Guidelines</a></div></div></div></footer>
 
   <script src="js/main.js"></script>
-  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();
+ 
+    // Initialize EmailJS
+  emailjs.init("thepRkB4sgQGLpqe9");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const form = document.getElementById('contact-form');
+    const button = form.querySelector('button');
+
+    // Loading state
+    button.innerText = "Sending...";
+    button.disabled = true;
+
+    emailjs.sendForm(
+      "service_5q5m30y",
+      "template_2i5eqww",
+      form
+    )
+    .then(() => {
+  </script>
 </body>
 </html>
