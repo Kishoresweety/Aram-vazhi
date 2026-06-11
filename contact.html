@@ -148,6 +148,23 @@
       form
     )
     .then(() => {
+     // Hide form
+      form.style.display = 'none';
+
+      // Show success message
+      document.getElementById('formSuccess').style.display = 'block';
+
+    })
+    .catch((error) => {
+
+      console.error("EmailJS Error:", error);
+
+      alert("Failed to send message. Please try again.");
+
+      button.innerText = "Send Message →";
+      button.disabled = false;
+     });
+   }
   </script>
 </body>
 </html>
