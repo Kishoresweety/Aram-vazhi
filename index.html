@@ -220,12 +220,13 @@
         <h3 style="font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--navy);margin-bottom:8px;">Quick Application</h3>
         <p style="font-size:14px;color:var(--gray-600);margin-bottom:28px;">Fill in your details and we'll get back to you shortly.</p>
 
-        <form id="quick-form">
-          <div class="form-group"><label class="form-label">Name</label><input class="form-input" type="text" placeholder="Full Name" required></div>
-          <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="you@email.com" required></div>
-          <div class="form-group"><label class="form-label">LinkedIn</label><input class="form-input" type="url" placeholder="linkedin.com/in/..."></div>
-          <div class="form-group"><label class="form-label">Skills</label><input class="form-input" type="text" placeholder="e.g. Cybersecurity, AI Research, Design"></div>
-          <div class="form-group"><label class="form-label">Why do you want to join?</label><textarea class="form-textarea" placeholder="Tell us about your motivation..."></textarea></div>
+        <form id="quick-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="4113a6d6-320a-4533-b79f-c2c8db5e5feb">
+          <div class="form-group"><label class="form-label">Name</label><input class="form-input" type="text" name="name" placeholder="Full Name" required></div>
+          <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" name="email" placeholder="you@email.com" required></div>
+          <div class="form-group"><label class="form-label">LinkedIn</label><input class="form-input" type="url" name="linkedin" placeholder="linkedin.com/in/..."></div>
+          <div class="form-group"><label class="form-label">Skills</label><input class="form-input" type="text" name="skills" placeholder="e.g. Cybersecurity, AI Research, Design"></div>
+          <div class="form-group"><label class="form-label">Why do you want to join?</label><textarea class="form-textarea" name="message" placeholder="Tell us about your motivation..."></textarea></div>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px;">
             Submit Application
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
